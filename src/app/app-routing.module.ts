@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {RentalsListComponent} from "./components/tutorials-list/rentals-list.component";
-import {AddRentalComponent} from "./components/add-tutorial/add-rental.component";
-import {RentalsDetailsComponent} from "./components/tutorial-details/rentals-details.component";
+import {RentalsListComponent} from "./components/rentals-list/rentals-list.component";
+import {AddRentalComponent} from "./components/add-rental/add-rental.component";
+import {RentalsDetailsComponent} from "./components/rental-details/rentals-details.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'rentals', pathMatch: 'full' },
