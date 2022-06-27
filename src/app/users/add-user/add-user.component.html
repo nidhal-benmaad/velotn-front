@@ -1,0 +1,44 @@
+<div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Ajouter
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form #form="ngForm">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="firstnameInput" class="form-label">Prénom</label>
+              <input type="email" class="form-control" id="firstnameInput" aria-describedby="emailHelp" name="firstname"
+                ngModel>
+            </div>
+            <div class="mb-3">
+              <label for="lastnameInput" class="form-label">Nom</label>
+              <input type="email" class="form-control" id="lastnameInput" aria-describedby="emailHelp" name="lastname"
+                ngModel>
+            </div>
+            <div class="mb-3">
+              <label for="emailInput" class="form-label">Email</label>
+              <input type="email" class="form-control" id="emailInput" name="email" ngModel>
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label">Password</label>
+              <input type="password" class="form-control" id="passwordInput" name="password" ngModel>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            <button type="submit" class="btn btn-success" (click)="saveUser(form.value)">Enregistrer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-between w-100">
+        <h1>Utilisateurs</h1>
+        <app-add-user (newItemEvent)="addItem($event)"></app-add-user>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Prénom</th>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Actions</th>
+              <!-- <th>Rôle</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list">
+              <td>{{item.firstname}}</td>
+              <td>{{item.lastname}}</td>
+              <td>{{item.email}}</td>
+              <td>
+                <app-edit-user [item]="item" (updateItemEvent)="updateItem($event)"></app-edit-user> <button
+                  class="btn btn-sm btn-danger ml-2" (click)="deleteItem(item._id)">
+                  Supprimer</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

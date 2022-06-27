@@ -1,29 +1,35 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {RentalsService} from "./services/rentals.service";
-import {AddRentalComponent} from "./components/add-rental/add-rental.component";
-import {RentalsListComponent} from "./components/rentals-list/rentals-list.component";
-import {RentalsDetailsComponent} from "./components/rental-details/rentals-details.component";
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import { IndexComponent } from './users/index/index.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { BookingIndexComponent } from './rentals/booking-index/booking-index.component';
+import { AddBookingComponent } from './rentals/add-booking/add-booking.component';
+import { EditBookingComponent } from './rentals/edit-booking/edit-booking.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddRentalComponent,
-    RentalsListComponent,
-    RentalsDetailsComponent
+    IndexComponent,
+    NotFoundComponent,
+    AddUserComponent,
+    EditUserComponent,
+    LoginComponent,
+    RegisterComponent,
+    BookingIndexComponent,
+    AddBookingComponent,
+    EditBookingComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [RentalsService],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

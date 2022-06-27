@@ -1,0 +1,13 @@
+<section class="login-clean">
+  <form #registerForm="ngForm">
+    <div class="illustration"><img src="../../assets/velotn-logo.svg" style="width: 106px;" /></div>
+    <h2>Créer un compte</h2>
+    <div class="mb-3"><input class="form-control" type="text" name="firstname" placeholder="Prénom" ngModel /></div>
+    <div class="mb-3"><input class="form-control" type="text" name="lastname" placeholder="Nom" ngModel /></div>
+    <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" ngModel /></div>
+    <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password" ngModel />
+    </div>
+    <div class="mb-3"><button class="btn btn-primary d-block w-100" (click)="register(registerForm.value)">Sign
+        up</button></div><a class="forgot" href="#">Forgot your email or password?</a>
+  </form>
+</section>
