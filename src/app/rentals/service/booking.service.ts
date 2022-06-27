@@ -1,21 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-const baseUrl = 'http://localhost:3000/users';
+const baseUrl = 'http://localhost:3000/booking';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class BookingService {
   constructor(private http: HttpClient) {}
-  fetchUsers() {
+  fetchBookings() {
     return this.http.get(`${baseUrl}`);
   }
-  addUser(data: any) {
+  addBooking(data: any) {
     return this.http.post(`${baseUrl}`, data);
   }
-  updateUser(id: any, data: any) {
+  updateBooking(id: any, data: any) {
     return this.http.put(`${baseUrl}${id}`, data);
   }
-  deleteUser(id: any) {
+  deleteBooking(id: any) {
     return this.http.delete(`${baseUrl}${id}`);
   }
 }

@@ -15,27 +15,31 @@
         <form #form="ngForm">
           <div class="modal-body">
             <div class="mb-3">
-              <label for="firstnameInput" class="form-label">Prénom</label>
-              <input type="email" class="form-control" id="firstnameInput" aria-describedby="emailHelp" name="firstname"
+              <label for="startDateInput" class="form-label">Date début</label>
+              <input type="date" class="form-control" id="startDateInput" aria-describedby="emailHelp" name="startDate"
                 ngModel>
             </div>
             <div class="mb-3">
-              <label for="lastnameInput" class="form-label">Nom</label>
-              <input type="email" class="form-control" id="lastnameInput" aria-describedby="emailHelp" name="lastname"
+              <label for="endDateInput" class="form-label">Date fin</label>
+              <input type="date" class="form-control" id="endDateInput" aria-describedby="emailHelp" name="endDate"
                 ngModel>
             </div>
             <div class="mb-3">
-              <label for="emailInput" class="form-label">Email</label>
-              <input type="email" class="form-control" id="emailInput" name="email" ngModel>
+              <label for="endDateInput" class="form-label">Vélos</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
             </div>
-            <div class="mb-3">
-              <label for="passwordInput" class="form-label">Password</label>
-              <input type="password" class="form-control" id="passwordInput" name="password" ngModel>
-            </div>
+
+
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-            <button type="submit" class="btn btn-success" (click)="saveUser(form.value)">Enregistrer</button>
+            <button type="submit" class="btn btn-success" (click)="saveBooking(form.value)">Enregistrer</button>
           </div>
         </form>
       </div>

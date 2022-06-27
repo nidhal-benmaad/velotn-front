@@ -9,6 +9,11 @@ import { IndexComponent } from './users/index/index.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { BookingIndexComponent } from './rentals/booking-index/booking-index.component';
+import { AddBookingComponent } from './rentals/add-booking/add-booking.component';
+import { EditBookingComponent } from './rentals/edit-booking/edit-booking.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { EditUserComponent } from './users/edit-user/edit-user.component';
     NotFoundComponent,
     AddUserComponent,
     EditUserComponent,
+    LoginComponent,
+    RegisterComponent,
+    BookingIndexComponent,
+    AddBookingComponent,
+    EditBookingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

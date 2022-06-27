@@ -1,0 +1,40 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col">
+      <div class="d-flex justify-content-between w-100">
+        <h1>Liste des location vélos</h1>
+        <app-add-booking (newItemEvent)="addItem($event)"></app-add-booking>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date début</th>
+              <th>Date fin</th>
+              <th>Montant</th>
+              <th>Actions</th>
+              <!-- <th>Rôle</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of list">
+              <td>{{item.startDate}}</td>
+              <td>{{item.endDate}}</td>
+              <td>{{item.cost}} DT</td>
+              <td>
+                <app-edit-booking [item]="item" (updateItemEvent)="updateItem($event)"></app-edit-booking>
+                <button class="btn btn-sm btn-danger ml-2" (click)="deleteItem(item._id)">
+                  Supprimer</button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
