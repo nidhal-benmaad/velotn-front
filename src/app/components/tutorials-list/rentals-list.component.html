@@ -1,0 +1,34 @@
+ <div class="col-md-6">
+    <h4>Rentals List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let rental of rentals; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveRental(rental, i)"
+      >
+        {{ rental?.address }}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentRental">
+      <h4>Tutorial</h4>
+      <div>
+        <label><strong>Address:</strong></label> {{ currentRental?.address }}
+      </div>
+      <div>
+        <label><strong>Price:</strong></label>
+        {{ currentRental?.price }}
+      </div>
+
+      <a class="badge badge-warning" routerLink="/rentals/{{ currentRental?.id }}">
+        Edit
+      </a>
+    </div>
+
+    <div *ngIf="!currentRental">
+      <br />
+      <p>Please click on a Rental...</p>
+    </div>
+  </div>
