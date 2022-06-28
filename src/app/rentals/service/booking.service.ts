@@ -13,9 +13,9 @@ export class BookingService {
     return this.http.post(`${baseUrl}`, data);
   }
   updateBooking(id: any, data: any) {
-    return this.http.put(`${baseUrl}${id}`, data);
+    return this.http.put(`${baseUrl}/${id}`, data);
   }
   deleteBooking(id: any) {
-    return this.http.delete(`${baseUrl}${id}`);
+    return this.http.delete(`${baseUrl}/${id}`);
   }
 }

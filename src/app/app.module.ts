@@ -14,6 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { BookingIndexComponent } from './rentals/booking-index/booking-index.component';
 import { AddBookingComponent } from './rentals/add-booking/add-booking.component';
 import { EditBookingComponent } from './rentals/edit-booking/edit-booking.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EditBookingComponent } from './rentals/edit-booking/edit-booking.compon
     BookingIndexComponent,
     AddBookingComponent,
     EditBookingComponent,
+    ProfileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

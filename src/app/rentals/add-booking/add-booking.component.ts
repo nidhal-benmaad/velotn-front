@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { BikeService } from 'src/app/services/bike.service';
 import { BookingService } from '../service/booking.service';
 
 @Component({
@@ -13,9 +14,14 @@ export class AddBookingComponent implements OnInit {
     message: '',
     visible: false,
   };
-  constructor(private us: BookingService) {}
+  bikes: any;
+  constructor(private us: BookingService, private bs: BikeService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.bs.fetchBikes().subscribe((data) => {
+      this.bikes = data;
+    });
+  }
   saveBooking(form: any) {
     console.log('form', form);
     this.us.addBooking(form).subscribe(
