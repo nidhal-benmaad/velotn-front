@@ -1,0 +1,18 @@
+
+<h1>                                                                       </h1>
+<fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
+border:2px solid blue;position: relative;">
+<form #f="ngForm" style=" width: 50vw; margin-left : 25vw;"  >
+<input type="hidden" name ="_id" value="oneCategorie._id">
+        <div><label>Title:</label><input type="text" name="title"  [(ngModel)]="oneCategorie.title">
+        </div><br>
+     <div>
+     <label>Description:</label><input type="text" name="description"  [(ngModel)]="oneCategorie.description">
+     </div>
+    <br>
+        
+        <input type="submit" value="Update" (click)="updatecategorie(f.value)">
+        <input type ="reset" value="Annuler"(click)="annulerupdate()">
+
+</form>   
+</fieldset>

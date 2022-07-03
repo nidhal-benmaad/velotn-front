@@ -1,0 +1,28 @@
+
+
+<h1>                                                                       </h1>
+<fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
+    border:2px solid blue;position: relative;">
+ <form #f="ngForm" style=" width: 50vw; margin-left : 25vw;" >
+    
+        
+        <input type="hidden" name ="_id" value="oneCompetition._id">
+        <div><label>Designation:</label><input type="text" name="designation"  [(ngModel)]="oneCompetition.designation">
+        </div><br>
+     <div>
+     <label>Place:</label><input type="text" name="place"  [(ngModel)]="oneCompetition.place">
+     </div><br>
+    <div>
+    <label>Date:</label><input type="text"name="date" [(ngModel)]="oneCompetition.date">
+    </div><br>
+     
+    <div>
+        
+        <input type="submit" value="update" (click)="updatecompetition(f.value)">
+        <input type ="reset" value="Annuler"(click)="annulerupdate()">    
+</div><br>
+</form>   
+</fieldset>
+
+
+ 

@@ -1,0 +1,20 @@
+<h1>                                                                       </h1>
+
+<fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
+    border:2px solid blue;position: relative;">
+ <form #f1="ngForm" style=" width: 50vw; margin-left : 25vw;">
+    
+     <div>
+     <label style="font-size: 20px;font-weight: 700;color: #021e74">Designation</label><input type="text" name="designation"  [(ngModel)]="competition.designation" >
+     </div>
+     <div>
+    <label style="font-size: 20px;font-weight: 700;color: #021e74">Place</label><input type="text"name="place" [(ngModel)]="competition.place" >
+    </div>
+   <div> <label style="font-size: 20px;font-weight: 700;color: #021e74">Date</label><input type="text"name="date" [(ngModel)]="competition.date" >
+</div>
+    
+        <input type="submit" style="background-color: #85c2e1; ;border: 2px black;text-align:center; text-decoration:#021e74;font-size: 20px; margin: 4px 2px;cursor: pointer;display: inline-block" value="save"(click)="ajoutercompetition(f1.value)">
+
+
+</form> 
+</fieldset>

@@ -1,0 +1,10 @@
+
+
+<fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
+    border:2px solid blue;position: relative;">
+<form #f="ngForm" >
+    <label>Email</label><input type="text" name="email" ngModel /><br>
+    <label>Password</label><input type="text"  name="password" ngModel />
+    <input type="submit" value="login" (click)="verifData(f.value)"/>
+    
+    </form></fieldset>
