@@ -1,0 +1,33 @@
+<div class="main-panel">
+    <div class="content-wrapper">
+      <div class="row">
+        <div class="main-panel">        
+          <div class="content-wrapper">
+            <div class="row">
+                <div class="col-md-12 grid-margin stretch-card">
+                    <div class="wrapper">
+                        <h2>Modifier Categorie</h2>
+                        <form [formGroup]="categorieForm" (ngSubmit)="onSubmit()">
+                          <div class="input-box">
+                            <input type="text" placeholder="Nom de categorie" formControlName="name" required>
+                          </div>
+                          
+                      
+                         
+                        
+                           
+                          <div class="input-box button">
+                            <button type="Submit"  >Modifier Categorie</button>
+                          </div>
+                         
+                        </form>
+                      </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+       
+      </div>
+    </div>
+   

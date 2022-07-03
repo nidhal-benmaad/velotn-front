@@ -1,0 +1,37 @@
+<div class="container">
+    <h2>Velo.tn<small><br>Liste de Matrials</small><br>
+    <button routerLink="/add-matrial"  class="button">Nouveau Matrial</button>
+    </h2>
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Image</div>
+        <div class="col col-2">Titre</div>
+       <div class="col col-3">Code</div>  
+       <div class="col col-4">Prix</div>
+       <div class="col col-5">Catgorie</div>      
+        <div class="col col-6">Status</div>
+        <div class="col col-7">Modifier</div>
+
+        
+        <div class="col col-8">Supprimer</div>
+      </li> 
+      <ng-container *ngFor="let item of matrials">
+      
+      <li class="table-row">
+        <img class="col col-1" [src]="'http://localhost:3000/'+item.imageUrl" alt="">
+        <div class="col col-2" data-label="Job Id">{{item.title}}</div>
+        <div class="col col-3" data-label="Job Id">{{item.code}}</div>
+        <div class="col col-4" data-label="Job Id">{{item.price}} DN</div>
+        <div class="col col-5" data-label="Job Id">{{item.categorie.name}}</div>
+
+        <div *ngIf="item.state==='in_stock'" class="col col-6" data-label="Job Id">En stock</div>
+        <div *ngIf="item.state==='not_available'" class="col col-6" data-label="Job Id">Indisponible</div>
+        <div *ngIf="item.state==='in_48_h'" class="col col-6" data-label="Job Id">Dans 48H</div>
+        <div *ngIf="item.state==='on_arrival'" class="col col-6" data-label="Job Id">à l'arrivée</div>
+
+        <div class="col col-7" data-label="Amount"><i routerLink="/update-matrial/{{item._id}}" style="color: blue;cursor: pointer" class="fa fa-pencil" aria-hidden="true"></i></div>
+        <div class="col col-8" data-label="Amount"><i style="color: red;cursor: pointer;" (click)="delete(item._id)" class="fa fa-trash" aria-hidden="true"></i></div>
+       </li>
+    </ng-container>
+    </ul>
+  </div>

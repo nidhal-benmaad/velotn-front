@@ -8,10 +8,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {CommonModule} from "@angular/common";
+import { AddMatrialComponent } from './pages/add-matrial/add-matrial.component';
+import { ListMatrialComponent } from './pages/list-matrial/list-matrial.component';
+import { ListCategorieComponent } from './pages/list-categorie/list-categorie.component';
+import { UpdateCategorieComponent } from './pages/update-categorie/update-categorie.component';
+import { UpdateMatrialComponent } from './pages/update-matrial/update-matrial.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    AddCategorieComponent
+    AddCategorieComponent,
+    AddMatrialComponent,
+    ListMatrialComponent,
+    ListCategorieComponent,
+    UpdateCategorieComponent,
+    UpdateMatrialComponent
+    
   ],
   imports: [
     BrowserModule,
