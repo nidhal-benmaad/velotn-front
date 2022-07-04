@@ -29,4 +29,9 @@ updateMatrial(id:any,resource:any){
 
 }
    
+filter(resource:any){
+   
+  return this.http.get(`${this.API_URI}/filter/`+resource.categorie+'/'+resource.prixmin+'/'+resource.prixmax+'/'+resource.sort);
+
+}
 }

@@ -59,7 +59,7 @@ export class UpdateMatrialComponent implements OnInit {
   }
   onSubmit() {
     this.matrialService.updateMatrial(this.id, this.matrialForm.value).subscribe((res: any) => {
-      this.toastr.success('Matrial Ajoute avec succe!', 'Notification!');
+      this.toastr.success('Matrial Modifier avec succe!', 'Notification!');
       this.matrialForm.reset()
       this.router.navigate(['/liste-matrial'])
     })

@@ -1,7 +1,55 @@
 <div class="container">
     <h2>Velo.tn<small><br>Liste de Matrials</small><br>
-    <button routerLink="/add-matrial"  class="button">Nouveau Matrial</button>
+    <button routerLink="/addMatrial"  class="button">Nouveau Matrial</button>
     </h2>
+    
+ <div class="container">
+    <div class="row" style="display: -webkit-inline-box;">
+      <form [formGroup]="filterForm"  style="display: flex;">
+      <div class="col-3">
+        <div class="input-field">
+          <label>Categorie :</label>
+          <select required formControlName="categorie">
+            <ng-container *ngFor="let item of categories">
+
+              <option value="{{item._id}}">{{item.name}}</option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-field">
+          <label>Prix min</label>
+          <input type="number" formControlName="prixmin" required>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-field">
+          <label>Prix max</label>
+          <input type="number" formControlName="prixmax" required>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="input-field">
+          <label>Trie :</label>
+          <select required formControlName="sort">
+            <ng-container *ngFor="let item of sortings">
+
+              <option value="{{item.id}}">{{item.txt}}</option>
+            </ng-container>
+          </select>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="input-field">
+          <button type="Submit"  >Filter</button>
+
+      </div>
+      </div>
+    </form>
+    </div>
+  </div>
     <ul class="responsive-table">
       <li class="table-header">
         <div class="col col-1">Image</div>

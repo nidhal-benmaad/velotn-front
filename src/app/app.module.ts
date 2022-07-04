@@ -13,6 +13,7 @@ import { ListMatrialComponent } from './pages/list-matrial/list-matrial.componen
 import { ListCategorieComponent } from './pages/list-categorie/list-categorie.component';
 import { UpdateCategorieComponent } from './pages/update-categorie/update-categorie.component';
 import { UpdateMatrialComponent } from './pages/update-matrial/update-matrial.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -35,6 +36,8 @@ import { UpdateMatrialComponent } from './pages/update-matrial/update-matrial.co
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(), // ToastrModule added
+
 
   ],
   providers: [CategorieService],

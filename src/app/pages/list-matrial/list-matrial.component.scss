@@ -1,91 +1,200 @@
 .container {
-    margin-left: auto;
-   margin-right: auto;
-   padding-left: 10px;
-   padding-right: 10px;
+   margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 h2 {
-   font-size: 26px;
-   margin: 20px 0;
-   text-align: center;
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
 }
 h2 small {
-   font-size: 0.5em;
+  font-size: 0.5em;
 }
 .responsive-table li {
-   border-radius: 3px;
-   padding: 25px 30px;
-   display: flex;
-   justify-content: space-between;
-   margin-bottom: 25px;
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
 }
 .responsive-table .table-header {
-   background-color: #95a5a6;
-   font-size: 14px;
-   text-transform: uppercase;
-   letter-spacing: 0.03em;
+  background-color: #95a5a6;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 .responsive-table .table-row {
-   background-color: #fff;
-   box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
 }
 .responsive-table .col-1 {
-   flex-basis: 10%;
+  flex-basis: 10%;
 }
 .responsive-table .col-2 {
-   flex-basis: 40%;
+  flex-basis: 40%;
 }
 .responsive-table .col-3 {
-   flex-basis: 25%;
+  flex-basis: 25%;
 }
 .responsive-table .col-4 {
-   flex-basis: 25%;
+  flex-basis: 25%;
 }
 .responsive-table .col-5 {
-   flex-basis: 25%;
+  flex-basis: 25%;
 }
 .responsive-table .col-8 {
-   flex-basis: 25%;
+  flex-basis: 25%;
 }
 .responsive-table .col-6 {
-   flex-basis: 25%;
+  flex-basis: 25%;
 }
 .responsive-table .col-7 {
-   flex-basis: 25%;
+  flex-basis: 25%;
 }
 @media all and (max-width: 767px) {
-   .responsive-table .table-header {
-       display: none;
-  }
-   .responsive-table li {
-       display: block;
-  }
-   .responsive-table .col {
-       flex-basis: 100%;
-  }
-   .responsive-table .col {
-       display: flex;
-       padding: 10px 0;
-  }
-   .responsive-table .col:before {
-       color: #6c7a89;
-       padding-right: 10px;
-       content: attr(data-label);
-       flex-basis: 50%;
-       text-align: right;
-  }
+  .responsive-table .table-header {
+      display: none;
+ }
+  .responsive-table li {
+      display: block;
+ }
+  .responsive-table .col {
+      flex-basis: 100%;
+ }
+  .responsive-table .col {
+      display: flex;
+      padding: 10px 0;
+ }
+  .responsive-table .col:before {
+      color: #6c7a89;
+      padding-right: 10px;
+      content: attr(data-label);
+      flex-basis: 50%;
+      text-align: right;
+ }
 }
 .button{
-   color: #fff;
-   background-color: #13c5dd ;
-   border-color: #13c5dd;
-   border-radius: 3px;    font-size: 13px;
-   padding: 13px 34px 12px;
-   cursor: pointer;
+  color: #fff;
+  background-color: #13c5dd ;
+  border-color: #13c5dd;
+  border-radius: 3px;    font-size: 13px;
+  padding: 13px 34px 12px;
+  cursor: pointer;
 }
 .button:hover{
-   background-color: #0e204d;
+  background-color: #0e204d;
 }
 img{
-   height: 40px !important;
+  height: 40px !important;
+}
+
+
+.container form .title{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: #333;
+}
+.container form .fields{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .fields .input-field{
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+.input-field label{
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.input-field input, select,textarea{
+  outline: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+.input-field input :focus,
+.input-field select:focus{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.input-field select,
+.input-field input[type="date"]{
+  color: #707070;
+}
+.input-field input[type="date"]:valid{
+  color: #333;
+}
+
+
+.container form{
+  position: relative;
+  margin-top: 16px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.container form .form{
+  position: absolute;
+  background-color: #fff;
+  transition: 0.3s ease;
+}
+.container form .form.second{
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+}
+form.secActive .form.second{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+form.secActive .form.first{
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%);
+}
+.container form .title{
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: #333;
+}
+select,input{
+  width: 147px;
+  height: 33px !important;
+  margin-left: 9px !important; 
+
+}
+label{
+  font-weight: bold !important;
+}
+.col-3{
+  width: 270px !important;
+}
+.col-3 
+button{
+  color: #fff;
+  background-color: #13c5dd ;
+  border-color: #13c5dd;
+  border-radius: 3px;    font-size: 13px;
+  padding: 13px 34px 12px;
+  cursor: pointer;
+}
+.col-3 button:hover{
+  background-color: #0e204d;
 }

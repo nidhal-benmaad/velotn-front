@@ -64,7 +64,7 @@ formData.append("categories",this.matrialForm.value.categories );
 
 
     this.matrialService.createMatrial( formData).subscribe((res: any) => {
-      this.toastr.success('Matrial Ajoute avec succe!', 'Notification!');
+      this.toastr.success('Matrial Ajouter avec succes!', 'Notification!');
       this.matrialForm.reset()
       this.router.navigate(['/liste-matrial'])
     })
