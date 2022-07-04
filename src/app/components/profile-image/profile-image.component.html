@@ -1,0 +1,33 @@
+<div class="mb-3">
+  <label for="uploadInput" class="form-label">Image de profil</label>
+  <!-- Button trigger modal -->
+  <div class="position-relative">
+    <img [src]="user.avatar || '../../assets/utilisateur.png'" width="200" height="200" class="rounded-circle" />
+
+    <button type="button" class="btn btn-sm btn-primary position-absolute" style="left:0px;bottom:0px;"
+      data-bs-toggle="modal" data-bs-target="#profileModal">
+      <i class="bi bi-pencil-square"></i> Editer
+    </button>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="profileModalLabel">Recadrez votre nouvelle photo de profil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <app-file-upload (newImageEvent)="getImage($event)"></app-file-upload>
+          <div [class]="'alert '+ monitor.type" role="alert" *ngIf="monitor.visible">
+            {{monitor.message}}
+          </div>
+        </div>
+        <div class=" modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-primary" (click)="updateImage()">Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

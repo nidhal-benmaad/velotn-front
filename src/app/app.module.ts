@@ -15,6 +15,11 @@ import { BookingIndexComponent } from './rentals/booking-index/booking-index.com
 import { AddBookingComponent } from './rentals/add-booking/add-booking.component';
 import { EditBookingComponent } from './rentals/edit-booking/edit-booking.component';
 import { ProfileComponent } from './profile/profile.component';
+import { NavComponent } from './nav/nav.component';
+import { HomeComponent } from './home/home.component';
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { ProfileImageComponent } from './components/profile-image/profile-image.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +34,18 @@ import { ProfileComponent } from './profile/profile.component';
     AddBookingComponent,
     EditBookingComponent,
     ProfileComponent,
+    NavComponent,
+    HomeComponent,
+    FileUploadComponent,
+    ProfileImageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ImageCropperModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

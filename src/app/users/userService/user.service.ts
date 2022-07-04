@@ -1,6 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 const baseUrl = 'http://localhost:3000/users';
+const headers = new HttpHeaders();
+const user = JSON.parse(localStorage.getItem('user') || '{}');
+
 @Injectable({
   providedIn: 'root',
 })
@@ -13,9 +16,15 @@ export class UserService {
     return this.http.post(`${baseUrl}`, data);
   }
   updateUser(id: any, data: any) {
-    return this.http.put(`${baseUrl}${id}`, data);
+    console.log('user', user);
+    if (user.token) headers.set('x-access-token', user.token);
+    return this.http.put(`${baseUrl}/${id}`, data, {
+      headers: {
+        'x-access-token': user.token || '',
+      },
+    });
   }
   deleteUser(id: any) {
-    return this.http.delete(`${baseUrl}${id}`);
+    return this.http.delete(`${baseUrl}/${id}`);
   }
 }

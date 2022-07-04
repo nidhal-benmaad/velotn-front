@@ -1,1 +1,57 @@
-<p>profile works!</p>
+<div class="container mt-5">
+  <form action="">
+    <div class="row mt-5 ">
+      <div class="col">
+        <h3>Mon compte</h3>
+        <div class="mb-3">
+          <label for="firstnameInput" class="form-label">Prénom</label>
+          <input type="text" class="form-control" id="firstnameInput" aria-describedby="emailHelp"
+            [value]="user.firstname">
+          <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+        </div>
+        <div class="mb-3">
+          <label for="lastnameInput" class="form-label">Nom</label>
+          <input type="text" class="form-control" id="lastnameInput" [value]="user.lastname">
+        </div>
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailInput" [value]="user.email" readonly>
+        </div>
+      </div>
+      <div class="col">
+        <app-profile-image></app-profile-image>
+        <!-- <div class="mb-3">
+          <label for="uploadInput" class="form-label">Image de profil</label>
+         
+        <div class="position-relative">
+          <img [src]="user.avatar || '../../assets/utilisateur.png'" width="100" height="100" class="rounded-circle" />
+
+          <button type="button" class="btn btn-sm rounded-circle btn-primary position-absolute"
+            style="left:-5px;bottom:-5px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="bi bi-pencil-square"></i>
+          </button>
+        </div>
+      
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Recadrez votre nouvelle photo de profil</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <app-file-upload (newImageEvent)="getImage($event)"></app-file-upload>
+              </div>
+              <div class=" modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-primary" (click)="updateImage(user)">Enregistrer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      </div>
+    </div>
+  </form>
+
+</div>
