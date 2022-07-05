@@ -5,7 +5,7 @@
     
  <div class="container">
     <div class="row" style="display: -webkit-inline-box;">
-      <form [formGroup]="filterForm"  style="display: flex;">
+      <form [formGroup]="filterForm"  style="display: flex;" (ngSubmit)="onSubmit()">
       <div class="col-3">
         <div class="input-field">
           <label>Categorie :</label>
