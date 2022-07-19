@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  constructor() {}
+  user: any = {};
+  constructor(public router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.user = JSON.parse(localStorage.getItem('user') || '{}');
+  }
+  logout() {
+    console.log('logout');
+    this.router.navigate(['/login']);
+    // localStorage.setItem('user', '');
+  }
 }
