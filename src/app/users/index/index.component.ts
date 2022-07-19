@@ -8,12 +8,17 @@ import { UserService } from '../userService/user.service';
 })
 export class IndexComponent implements OnInit {
   list: any;
+  archivedUsers: any;
   constructor(private us: UserService) {}
 
   ngOnInit(): void {
     this.us.fetchUsers().subscribe((data) => {
       console.log('fetchUsers >>>', data);
       this.list = data;
+    });
+    this.us.archivedUsers().subscribe((data) => {
+      console.log('fetchUsers >>>', data);
+      this.archivedUsers = data;
     });
   }
   addItem(item: any) {

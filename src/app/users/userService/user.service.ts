@@ -19,6 +19,16 @@ export class UserService {
       },
     });
   }
+  archivedUsers() {
+    return this.http.get(`${baseUrl}`, {
+      params: {
+        deleted: true,
+      },
+      headers: {
+        'x-access-token': user.token || '',
+      },
+    });
+  }
   addUser(data: any) {
     return this.http.post(`${baseUrl}`, data, {
       headers: {
