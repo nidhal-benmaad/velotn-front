@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CompetitionsService } from 'src/app/services/competitions.service';
 
 @Component({
   selector: 'app-navbar',

@@ -16,6 +16,8 @@ import { UpdatecategorieComponent } from './competitions/updatecategorie/updatec
 import { ShowonecategorieComponent } from './competitions/showonecategorie/showonecategorie.component';
 import { DeletecategorieComponent } from './competitions/deletecategorie/deletecategorie.component';
 import { LoginComponent } from './competition/login/login.component';
+import { SearchplaceComponent } from './competition/searchplace/searchplace.component';
+import { ShowsearchComponent } from './competition/showsearch/showsearch.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LoginComponent } from './competition/login/login.component';
     UpdatecategorieComponent,
     ShowonecategorieComponent,
     DeletecategorieComponent,
-    LoginComponent
+    LoginComponent,
+    SearchplaceComponent,
+    ShowsearchComponent
   ],
   imports: [
     BrowserModule,

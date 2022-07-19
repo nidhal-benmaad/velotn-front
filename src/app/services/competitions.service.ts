@@ -7,6 +7,7 @@ import { Competition } from 'model/competition';
 })
 export class CompetitionsService {
   url='http://localhost:3000/competitions/'
+  url2='http://localhost:3000/competitions/place1/'
   constructor(private http:HttpClient) { }
 
 
@@ -38,6 +39,20 @@ return this.http.patch(this.url+id,data);
 
 deleteCompetition(id:any) {
   return this.http.delete(this.url+id);}
+
+//Rechercher un element par place
+searchplace(data:any)
+{
+
+  return this.http.get(this.url2+data);
+}
+
+/*/Rechercher un element par categorie
+searchcategorie(data:any)
+{
+
+  return this.http.get(this.url+data);
+}*/
 
 
 }

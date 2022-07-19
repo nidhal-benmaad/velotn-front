@@ -5,9 +5,9 @@
         <tr>
             <!-- <th>Id</th>  -->
             <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA">Designation</th>
-            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA" >Place</th>
+            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA" >Emplacement</th>
             <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA">Date</th>
-                                      
+            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA">Catégorie</th>
             <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA" colspan="3">Action</th>
             
         </tr>
@@ -19,15 +19,23 @@
             <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff">{{oneCompetition?.designation}}</td>
             <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> {{oneCompetition?.place}}</td>
             <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> {{oneCompetition?.date}}</td>
+            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> {{oneCompetition?.categorie}}</td>           
+             
 
+
+             <td>
+                <button type="submit" class="btn btn-primary" position-relative (click)="updateCompetition([oneCompetition._id])">Modifier</button>
             
-           <td><button class="btn-warning" (click)="updateCompetition([oneCompetition._id])">Modifier</button></td>
-           <td><button class="btn btn-warning" (click)="deleteCompetition([oneCompetition._id])">Supprimer</button></td>
-            <!-- <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> <a routerLink="/updatecompetition/{{oneCompetition._id}}">Modifier</a></td>
-             
-             <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> <a routerLink="/deletecompetition/{{oneCompetition._id}}">Supprimer</a></td> -->
-             
-             
+            
+            </td>
+              <td >
+                  <!-- <button type="reset" class="btn btn-primary" position-relative (click)="deleteCompetition([oneCompetition._id])">Supprimer</button> -->
+                  <button type="reset" class="btn btn-primary" position-relative (click)="confirmdelete([oneCompetition._id])">Supprimer</button>
+                  
+              </td>
+        
+
+
             </tr>
 
 

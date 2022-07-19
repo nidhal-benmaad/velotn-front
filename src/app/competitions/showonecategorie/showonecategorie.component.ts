@@ -31,7 +31,7 @@ updateCategorie(id:any){
 
 //Delete Categorie
 deleteCategorie(id:any){
-
+  alert('Etes-vous sûr de supprimer la catégorie!!'+this.oneCategorie);
   this.servCateg.deleteCategorie(id).subscribe(
 ()=>{alert('Category Deleted');
 this.router.navigate(['/categories/']);

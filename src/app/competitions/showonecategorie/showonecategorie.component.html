@@ -18,11 +18,24 @@
             <td style=" border: thin solid #6495ed;width: 10%;padding: 5px;text-align: center;background-color: #ffffff"> {{oneCategorie?.description}}</td>
             
             
-            <td> <button class="btn-warning" (click)="updateCategorie([oneCategorie._id])">Modifier</button></td>
-                <td><button class="btn btn-warning" (click)="deleteCategorie([oneCategorie._id])">Supprimer</button></td>
-        </tr>
+       
+
+    <td>
+        <button type="submit" class="btn btn-primary" position-relative (click)="updateCategorie([oneCategorie._id])">Modifier</button>
+    
+    
+    </td>
+      <td >
+          <button type="reset" class="btn btn-primary" position-relative (click)="deleteCategorie([oneCategorie._id])">Supprimer</button>
+    
+          
+      </td>
+
+
+    </tr>
 
 
     
-    </tbody>
+</tbody>
+
 </table>

@@ -31,15 +31,31 @@ export class ShowOneCompetitionComponent implements OnInit {
     this.router.navigate(['/updatecompetition/'+id]);
   }
 //Delete competition
-deleteCompetition(id:any){
 
-  this.servcompet.deleteCompetition(id).subscribe(
+
+confirmdelete(id:any){
+  this.router.navigate(['/deletecompetition/'+id]);}
+  /*if(prompt('Etes-vous sûr de supprimer la compétition suivante!!'))
+{this.servcompet.deleteCompetition(id).subscribe(
+  ()=>{alert('competition Deleted');});
+ 
+   if(!prompt)
+   {this.router.navigate(['/competition/']);}
+ 
+
+  //()=>{alert('competition Deleted');}
+}
+
+}*/
+/*function delete
+deleteCompetition(id:any){
+   this.servcompet.deleteCompetition(id).subscribe(
 ()=>{alert('competition Deleted');
 this.router.navigate(['/competition/']);
 }
 
   );
-}
+}*/
 
 
 }

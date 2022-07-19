@@ -1,20 +1,49 @@
 
 
-<h1>                                                                       </h1>
+<div class="p-3 mb-2 bg-primary text-white">
+<div class="btn-group" role="group" aria-label="Basic example" position="right">
+    <div class="fixed-top">    
+    <button type="button" class="btn btn-primary" (click)="annuleradd()">Retour</button>
+  </div></div> 
+  </div> 
+<h1>  </h1>
+<div class="position-absolute top-50 start-50 translate-middle">
 <fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
     border:2px solid blue;position: relative;">
- <form #f1="ngForm" style=" width: 50vw; margin-left : 25vw;">
-    
-     <div>
-     <label style="font-size: 20px;font-weight: 700;color: #021e74">Title : </label><input type="text" name="designation"  [(ngModel)]="categorie.title" >
-     </div>
-     <div>
-    <label style="font-size: 20px;font-weight: 700;color: #021e74">Description : </label><input type="text"name="place" [(ngModel)]="categorie.description" >
+
+<form class="row gy-2 gx-3 align-items-center" #f1="ngForm" >
+    <div class="row mb-3">
+        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Title </b></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm"  placeholder="title" required #titre="ngModel" name="title" maxlength='10' [(ngModel)]="categorie.title" >
+        </div>
+
+        <div *ngIf ="titre.invalid">le titre est obligatoire!! et il ne doit pas dépasser 10 Caractéres</div>
     </div>
 
-   
-        <input type="submit" style="background-color: #85c2e1; ;border: 2px rgb(6, 13, 103);text-align:center; text-decoration:#021e74;font-size: 20px; margin: 4px 2px;cursor: pointer;display: inline-block" value="save"(click)="ajoutercategorie(f1.value)">
+
+      <div class="row mb-3">
+        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Description</b> </label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm"  placeholder="Description" required #descipt="ngModel" minlength="15"  name="place" [(ngModel)]="categorie.description" >
+        </div>
+      
+        <div *ngIf ="descipt.invalid">la description doit contenir au moins 15 Caractéres</div>
+      </div>
+
+      
+    
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary" position-relative (click)="ajoutercategorie(f1.value)">Confirmer</button>
 
 
-</form> 
-</fieldset>
+    </div>
+    <div class="col-auto">
+        <button type="reset" class="btn btn-primary" position-relative (click)="annuleradd()">Annuler</button>
+  
+        
+      </div>
+  </form>
+</fieldset></div>
+
+

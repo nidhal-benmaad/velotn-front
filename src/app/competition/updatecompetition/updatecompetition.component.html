@@ -1,28 +1,98 @@
 
+<h1>  </h1>
 
-<h1>                                                                       </h1>
-<fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
-    border:2px solid blue;position: relative;">
- <form #f="ngForm" style=" width: 50vw; margin-left : 25vw;" >
+<div class="p-3 mb-2 bg-primary text-white">
+
+
     
+    <div class="btn-group" role="group" aria-label="Basic example" position="right">
+      <div class="fixed-top">    
+      <button type="button" class="btn btn-primary" (click)="annulerupdate()">Retour</button>
+    </div></div> 
+    </div> 
+<div class="position-absolute top-50 start-50 translate-middle">
+<fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
+  border:2px solid blue;position: relative;">
+<legend>Modifier Compétition</legend>
+<form class="row gy-2 gx-3 align-items-center" #f="ngForm" >
+    <div><input type="hidden" name ="_id" value="oneCompetition._id"></div>
+  <div class="row mb-3">
+      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Designation </b></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-sm"   name="designation" required #design="ngModel"  [(ngModel)]="oneCompetition.designation" >
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Emplacement</b> </label>
+      
+
+<div>
+      <select name="place" required #emplacement="ngModel" [(ngModel)]="oneCompetition.place">
+              
         
-        <input type="hidden" name ="_id" value="oneCompetition._id">
-        <div><label>Designation:</label><input type="text" name="designation"  [(ngModel)]="oneCompetition.designation">
-        </div><br>
-     <div>
-     <label>Place:</label><input type="text" name="place"  [(ngModel)]="oneCompetition.place">
-     </div><br>
-    <div>
-    <label>Date:</label><input type="text"name="date" [(ngModel)]="oneCompetition.date">
-    </div><br>
-     
-    <div>
+        <option value="Tunis">Tunis</option>
+        <option value="Nabeul" selected >Nabeul</option>
+        <option value="La Marsa">La Marsa</option>
+        <option value="Carthage" >Carthage</option>
+        <option value="Bizerte" >Bizerte</option>
+        <option value="Tozeur">Tozeur</option>
+        <option value="Béja" >Béja</option>
+        <option value="Gabes">Gabes</option>
+        <option value="Sousse">Sousse</option>
+        <option value="Hammamet">Hammamet</option>
+        <option value="Bou Saïd">Bou Saïd</option>
+        <option value="Sfax">Sfax</option>
+        <option value="Tabarka">Tabarka</option>
+       
+     </select>
+</div>
+<div *ngIf ="emplacement.invalid">Veuillez choisir l'emplacement SVP!!</div>
+    
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <div class="row mb-3">
+      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Date</b> </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-sm"   name="date" [(ngModel)]="oneCompetition.date" >
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Catégorie</b> </label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control form-control-sm"   name="categorie" [(ngModel)]="oneCompetition.categorie" > 
+          <select name="categorie" [(ngModel)]="oneCompetition.categorie">
+              <ng-container *ngFor="let item of listcategories">
+              
+               <option value="{{item._id}}">{{item.title}}</option>
+              </ng-container>
+            </select>
+      </div>
+
         
-        <input type="submit" value="update" (click)="updatecompetition(f.value)">
-        <input type ="reset" value="Annuler"(click)="annulerupdate()">    
-</div><br>
-</form>   
+      
+    </div>
+
+
+  
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary" position-relative (click)="updatecompetition(f.value)">Confirmer</button>
+
+
+  </div>
+  <div class="col-auto">
+      <button type="reset" class="btn btn-primary" position-relative (click)="annulerupdate()">Annuler</button>
+
+      
+    </div>
+</form>
 </fieldset>
-
-
- 

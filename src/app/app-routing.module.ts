@@ -4,7 +4,9 @@ import { AddcompetitionComponent } from './competition/addcompetition/addcompeti
 import { DeleteCompetitionComponent } from './competition/delete-competition/delete-competition.component';
 import { LoginComponent } from './competition/login/login.component';
 import { NavbarComponent } from './competition/navbar/navbar.component';
+import { SearchplaceComponent } from './competition/searchplace/searchplace.component';
 import { ShowOneCompetitionComponent } from './competition/show-one-competition/show-one-competition.component';
+import { ShowsearchComponent } from './competition/showsearch/showsearch.component';
 import { UpdatecompetitionComponent } from './competition/updatecompetition/updatecompetition.component';
 import { AddcategorieComponent } from './competitions/addcategorie/addcategorie.component';
 import { CategoriesComponent } from './competitions/categories/categories.component';
@@ -24,6 +26,8 @@ const routes: Routes = [
     {path:'addcompetition',component:AddcompetitionComponent},
     {path:'updatecompetition/:id',component:UpdatecompetitionComponent},    
     {path:'deletecompetition/:id',component:DeleteCompetitionComponent},
+    {path:'searchplace/place1/:place',component:SearchplaceComponent},
+    {path:'showcategorie/:categorie',component:ShowsearchComponent},
 
 
   {path:'categories',component:CategoriesComponent},

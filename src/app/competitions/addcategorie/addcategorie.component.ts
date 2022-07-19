@@ -25,4 +25,8 @@ export class AddcategorieComponent implements OnInit {
     
     }
 
+    annuleradd(){
+      this.router.navigate(['categories']);
+    }
+
 }

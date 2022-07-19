@@ -1,35 +1,141 @@
 
- <a  [routerLink]="['/addcompetition']">Ajouter Compétition</a> 
+<!--background 1 -->
+  <div
+  class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');" 
+> 
 
- <h1>Gestion des Compétitions</h1>
 
 
 
+
+ <div class="p-3 mb-2 bg-primary text-white" >
+
+<nav  class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" [routerLink]="['/login/']">Home</a>
+      </li></ul>
+      
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <a class="nav-link" href="#">Contacts</a>     
+      
+    </ul>
+
+        
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" [routerLink]="['/categories/']">Catégories de Compétitions</a>
+      </li>
+      
+      
+    </ul>
+
+
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="['/addcompetition']">Ajouter Compétition</a>
+        </li>
+        
+        
+      </ul>
+<!-- search function  par place-->
+ <ul>
+    <li class="nav-item">
+    <form  #f1="ngForm">
+      <!-- <input type="text" name="searchplace" #searchplace ngModel > -->
+
+      <div class="col-sm-10">
+          
+        <select name="searchplace" required #searchplace ngModel >
+            
+             <option value="Tunis" selected>Tunis</option>
+             <option value="Nabeul" >Nabeul</option>
+             <option value="La Marsa">La Marsa</option>
+             <option value="Carthage" >Carthage</option>
+             <option value="Bizerte" >Bizerte</option>
+             <option value="Tozeur">Tozeur</option>
+             <option value="Béja" >Béja</option>
+             <option value="Gabes">Gabes</option>
+             <option value="Sousse">Sousse</option>
+             <option value="Hammamet">Hammamet</option>
+             <option value="Bou Saïd">Bou Saïd</option>
+             <option value="Sfax">Sfax</option>
+             <option value="Tabarka">Tabarka</option>
+            
+          </select>
+   
+        <input type="submit" value ="Search/Place" name="place" (click)="searchPlace(f1)"> </div>
+       
+      </form>
+      </li>
+</ul> 
+<!-- search function par catégorie
+<ul>
+  <li class="nav-item">
+  <form  #f2="ngForm">
+    <input type="text" name="searchcategorie" #searchcategorie ngModel >
+      <input type="submit" value ="Search/Catégorie" name="categorie" (click)="searchCategorie(f1)">
+     
+    </form>
+    </li>
+</ul>  -->
+
+
+<ul>
+  <li class="nav-item"> 
+    
+      <input type="submit" value ="Afficher liste competitions" name="afficher" (click)="afficherlistecompetitions()">
+         
+    </li>
+</ul> 
+
+
+      </div>
+      </div>
+    </nav>
+
+
+
+ 
+ <hr>                     
+
+
+<div>
 <table style="border:2px solid #6495ed;">
-    <thead >
+    
         <tr>
             <!-- <th>Id</th> -->
-            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA">Designation</th>
-            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA">Place</th>
-            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA">Date</th>
-                                      
-            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px;background-color: #D0E3FA"colspan="3">Action</th>
+            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px">Designation</th>
+            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px">Emplacement</th>
+            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px">Date</th>
+            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px">Catégorie</th>                       
+            <th style="font-family: monospace;border: thin solid #6495ed;width: 50%;padding: 5px"colspan="3"font color="white">Action</th>
             
         </tr>
-    </thead>
-    <tbody>  
+     
+    
         
          <tr *ngFor=" let i of listcompetition  ">
         
             <!-- <td >{{i._id}}</td> -->
-            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff">{{i.designation}}</td>
-            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> {{i.place}}</td>
-            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> {{i.date}}</td>   
-            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center;background-color: #ffffff"> <a routerLink="/showonecompetition/{{i._id}}">Détail</a></td>
+            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center">{{i.designation}}</td>
+            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center"> {{i.place}}</td>
+            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center"> {{i.date}}</td>   
+            <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center"> {{i.categorie}}</td>
+             <td style=" border: thin solid #6495ed;width: 50%;padding: 5px;text-align: center"> <a routerLink="/showonecompetition/{{i._id}}">Détail</a></td> 
             </tr>
 
 
     
-        </tbody>
+        
     </table>
-    
+  </div>
+   </div>
+  </div>

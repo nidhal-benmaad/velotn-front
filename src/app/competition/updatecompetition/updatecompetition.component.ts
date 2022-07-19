@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { animationFrameScheduler } from 'rxjs';
+import { CategoriescompetitionService } from 'src/app/services/categoriescompetition.service';
 import { CompetitionsService } from 'src/app/services/competitions.service';
 
 @Component({
@@ -11,13 +12,16 @@ import { CompetitionsService } from 'src/app/services/competitions.service';
 export class UpdatecompetitionComponent implements OnInit {
   id!:any;
   oneCompetition!:any;
-  constructor(private servcompet:CompetitionsService,private ar:ActivatedRoute,private router:Router) { }
+  listcategories:any=[];
+  constructor(private servcompet:CompetitionsService,private servcateg:CategoriescompetitionService,private ar:ActivatedRoute,private router:Router) { }
 
   ngOnInit(): void {
-    
+    this.getallCategories();
     this.id=this.ar.snapshot.params['id'];
     this.servcompet.getCompetitionByID(this.id).subscribe(
-      (data)=>{this.oneCompetition=data; }
+      (data)=>{this.oneCompetition=data;
+      //console.log(data)
+     }
        
     ); }
 
@@ -33,4 +37,13 @@ export class UpdatecompetitionComponent implements OnInit {
     annulerupdate()
     { this.router.navigate(['/competition/']);}
 
+
+
+    getallCategories(){
+      this.servcateg.showcategories().subscribe(
+      (data)=>{
+        console.log(data);
+        this.listcategories=data}
+      );
+      }
 }

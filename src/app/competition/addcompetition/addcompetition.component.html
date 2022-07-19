@@ -1,20 +1,89 @@
-<h1>                                                                       </h1>
 
+
+<div class="p-3 mb-2 bg-primary text-white">
+
+
+    
+      <div class="btn-group" role="group" aria-label="Basic example" position="right">
+        <div class="fixed-top">    
+        <button type="button" class="btn btn-primary" (click)="annuleradd()">Retour</button>
+      </div></div> 
+      </div> 
+<div class="position-absolute top-50 start-50 translate-middle">
 <fieldset style="background-color:#D0E3FA; max-width:500px; padding:16px;	
     border:2px solid blue;position: relative;">
- <form #f1="ngForm" style=" width: 50vw; margin-left : 25vw;">
-    
-     <div>
-     <label style="font-size: 20px;font-weight: 700;color: #021e74">Designation</label><input type="text" name="designation"  [(ngModel)]="competition.designation" >
-     </div>
-     <div>
-    <label style="font-size: 20px;font-weight: 700;color: #021e74">Place</label><input type="text"name="place" [(ngModel)]="competition.place" >
+<legend>Ajouter Compétition</legend>
+<form class="row gy-2 gx-3 align-items-center" #f1="ngForm" >
+    <div class="row mb-3">
+        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Designation </b></label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control form-control-sm"  placeholder="designation" name="designation" required #design="ngModel" [(ngModel)]="competition.designation" >
+        </div>
+        <div *ngIf="design.invalid">le champ est obligatoire!!</div>
+      </div>
+      <div class="row mb-3">
+        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Emplacement</b> </label>
+        <div class="col-sm-10">
+          
+          <select name="place" required #emplacement="ngModel" [(ngModel)]="competition.place">
+              
+               <option value="Tunis" selected>Tunis</option>
+               <option value="Nabeul" >Nabeul</option>
+               <option value="La Marsa">La Marsa</option>
+               <option value="Carthage" >Carthage</option>
+               <option value="Bizerte" >Bizerte</option>
+               <option value="Tozeur">Tozeur</option>
+               <option value="Béja" >Béja</option>
+               <option value="Gabes">Gabes</option>
+               <option value="Sousse">Sousse</option>
+               <option value="Hammamet">Hammamet</option>
+               <option value="Bou Saïd">Bou Saïd</option>
+               <option value="Sfax">Sfax</option>
+               <option value="Tabarka">Tabarka</option>
+              
+            </select>
+      </div>
+      <div *ngIf ="emplacement.invalid">Veuillez choisir l'emplacement SVP!!</div>
+      </div>
+
+       <div class="row mb-3">
+        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Date</b> </label>
+        <div class="col-sm-10">
+          <input type="date" class="form-control form-control-sm"  placeholder="Date" name="date" required #dat="ngModel" [(ngModel)]="competition.date" >
+        </div> 
+
+        <div *ngIf="dat.invalid">le champ  Date est obligatoire!!</div>
+
+
+       </div> 
+      <div class="row mb-3">
+        <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"><b>Catégorie</b> </label>
+        <div class="col-sm-10">
+          
+            <select name="categorie" [(ngModel)]="competition.categorie">
+                <ng-container *ngFor="let item of listcategories">
+                
+                 <option value="{{item._id}}">{{item.title}}</option>
+                </ng-container>
+              </select>
+        </div>
+          <!-- 
+            value="{{item._id}}"
+            [(ngModel)]="competition.categorie"
+            <select type="text" class="form-control form-control-sm"  placeholder="categorie" name="categorie" [(ngModel)]="competition.categorie" > -->
+        </div>
+      
+
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary" position-relative (click)="ajoutercompetition(f1.value)">Confirmer</button>
+
+
     </div>
-   <div> <label style="font-size: 20px;font-weight: 700;color: #021e74">Date</label><input type="text"name="date" [(ngModel)]="competition.date" >
-</div>
-    
-        <input type="submit" style="background-color: #85c2e1; ;border: 2px black;text-align:center; text-decoration:#021e74;font-size: 20px; margin: 4px 2px;cursor: pointer;display: inline-block" value="save"(click)="ajoutercompetition(f1.value)">
-
-
-</form> 
+    <div class="col-auto">
+        <button type="reset" class="btn btn-primary" position-relative (click)="annuleradd()">Annuler</button>
+  
+        
+      </div>
+  </form>
 </fieldset>
