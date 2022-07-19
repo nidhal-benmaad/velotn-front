@@ -10,10 +10,21 @@ const user = JSON.parse(localStorage.getItem('user') || '{}');
 export class UserService {
   constructor(private http: HttpClient) {}
   fetchUsers() {
-    return this.http.get(`${baseUrl}`);
+    return this.http.get(`${baseUrl}`, {
+      params: {
+        deleted: false,
+      },
+      headers: {
+        'x-access-token': user.token || '',
+      },
+    });
   }
   addUser(data: any) {
-    return this.http.post(`${baseUrl}`, data);
+    return this.http.post(`${baseUrl}`, data, {
+      headers: {
+        'x-access-token': user.token || '',
+      },
+    });
   }
   updateUser(id: any, data: any) {
     console.log('user', user);
@@ -24,7 +35,13 @@ export class UserService {
       },
     });
   }
-  deleteUser(id: any) {
-    return this.http.delete(`${baseUrl}/${id}`);
+  deleteUser(id: any, data: any) {
+    console.log('user', user);
+    if (user.token) headers.set('x-access-token', user.token);
+    return this.http.put(`${baseUrl}/${id}`, data, {
+      headers: {
+        'x-access-token': user.token || '',
+      },
+    });
   }
 }

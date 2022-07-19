@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { ProfileImageComponent } from './components/profile-image/profile-image.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ProfileImageComponent } from './components/profile-image/profile-image.
     HomeComponent,
     FileUploadComponent,
     ProfileImageComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

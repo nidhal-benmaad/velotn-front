@@ -3,6 +3,6 @@
 
 <input type="file" (change)="fileChangeEvent($event)" class="form-control" />
 
-<image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4/3" format="png"
+<image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" format="png"
   (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded($event)" (cropperReady)="cropperReady()"
   (loadImageFailed)="loadImageFailed()" [resizeToWidth]="100" [cropperMinWidth]="200" width="150"></image-cropper>

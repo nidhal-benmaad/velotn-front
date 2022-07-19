@@ -24,10 +24,11 @@ export class IndexComponent implements OnInit {
     if (index !== -1) this.list[index] = item;
   }
   deleteItem(id: any) {
-    this.us.deleteUser(id).subscribe(() => {
-      let index = this.list.findIndex((item: any) => item._id == id);
-      console.log('index', index);
-      if (index !== -1) this.list.splice(index, 1);
+    this.us.updateUser(id, { deleted: true }).subscribe(() => {
+      this.us.fetchUsers().subscribe((data) => {
+        console.log('fetchUsers >>>', data);
+        this.list = data;
+      });
     });
   }
 }

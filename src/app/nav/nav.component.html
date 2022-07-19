@@ -1,14 +1,27 @@
-<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar border-bottom">
+<nav *ngIf="router.url !== '/login' && router.url !== '/register'"
+  class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar border-bottom">
   <div class="container"><a class="navbar-brand logo" href="#">Brand</a><button class="navbar-toggler"
       data-bs-toggle="collapse" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
         class="navbar-toggler-icon"></span></button>
     <div id="navcol-1" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="features.html">Features</a></li>
-        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link active" [routerLink]="['/dashboard']" href="index.html">Home</a></li>
+
+        <li class="nav-item">
+          <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false"
+              data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">
+                {{user.firstname +' '+ user.lastname}}</span><img class="border rounded-circle img-profile"
+                [src]="user.avatar || '../../assets/utilisateur.png'" width="30" height="30" /></a>
+            <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item"
+                [routerLink]="['/profile']" href="#"><i
+                  class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i> Profile</a>
+              <a class="dropdown-item" [routerLink]="['/users']" href="#"><i
+                  class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>Users</a>
+              <div class="dropdown-divider"></div><a class="dropdown-item" (click)="logout()" href="#"><i
+                  class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i> Logout</a>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
