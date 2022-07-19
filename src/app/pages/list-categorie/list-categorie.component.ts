@@ -17,6 +17,7 @@ export class ListCategorieComponent implements OnInit {
   ngOnInit(): void {
     this.allCategorie()
   }
+  
   allCategorie(){
     this.categorieService.getAllCatgorie().subscribe((res:any)=>{
       this.categories=res.result
@@ -30,7 +31,7 @@ export class ListCategorieComponent implements OnInit {
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Oui, supprimez-le !'
-    }).then((result) => {
+    }).then((result: { isConfirmed: any; }) => {
       if (result.isConfirmed) {
     this.categorieService.deleteCategorie(id).subscribe(res=>{
       this.toastr.success('Categorie Supprime avec succe!', 'Notification!');

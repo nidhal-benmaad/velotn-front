@@ -1,0 +1,12 @@
+
+<h6>Liste des produits</h6>
+<ng-container *ngFor="let prod of products">
+    <div class="row">
+       <div class="col-12">
+           <app-product-cart [product]="prod" ></app-product-cart> 
+       </div>
+    </div>
+       
+   </ng-container>
+   
+   

@@ -14,6 +14,9 @@ import { ListCategorieComponent } from './pages/list-categorie/list-categorie.co
 import { UpdateCategorieComponent } from './pages/update-categorie/update-categorie.component';
 import { UpdateMatrialComponent } from './pages/update-matrial/update-matrial.component';
 import { ToastrModule } from 'ngx-toastr';
+import { ProductCartComponent } from './components/product-cart/product-cart.component';
+import { ListProductComponent } from './pages/list-product/list-product.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { ToastrModule } from 'ngx-toastr';
     ListMatrialComponent,
     ListCategorieComponent,
     UpdateCategorieComponent,
-    UpdateMatrialComponent
+    UpdateMatrialComponent,
+    ProductCartComponent,
+    ListProductComponent,
+    CartComponent
     
   ],
   imports: [

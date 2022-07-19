@@ -1,0 +1,9 @@
+
+<div class="card">
+    <img [src]="'http://localhost:3000/'+product.imageUrl" alt="Denim Jeans" style="width:32%">
+    <h2>{{product.title}}</h2>
+    <p *ngIf="product.promo.price >0" class="price">{{product.promo.price}} DT</p>
+    <p *ngIf="product.promo.price ===0" class="price">{{product.price}} DT</p>
+    <p>{{product?.categorie?.name}}</p>
+    <p><button (click)="addToCart(product)">Ajouter au panier</button></p>
+  </div> 

@@ -70,7 +70,7 @@
         <div class="col col-2" data-label="Job Id">{{item.title}}</div>
         <div class="col col-3" data-label="Job Id">{{item.code}}</div>
         <div class="col col-4" data-label="Job Id">{{item.price}} DN</div>
-        <div class="col col-5" data-label="Job Id">{{item.categorie.name}}</div>
+        <div class="col col-5" data-label="Job Id">{{item?.categorie?.name}}</div>
 
         <div *ngIf="item.state==='in_stock'" class="col col-6" data-label="Job Id">En stock</div>
         <div *ngIf="item.state==='not_available'" class="col col-6" data-label="Job Id">Indisponible</div>

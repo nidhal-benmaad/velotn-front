@@ -1,0 +1,29 @@
+.card {
+    margin-top: 146px;
+    box-shadow: 0 6px 40px 0 rgb(0 0 0 / 20%);
+    max-width: 412px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #1db8ea;;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
