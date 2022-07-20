@@ -10,18 +10,7 @@ import { UpdateCategorieComponent } from './pages/update-categorie/update-catego
 import { UpdateMatrialComponent } from './pages/update-matrial/update-matrial.component';
 
 const routes: Routes = [
-  {path: 'addCategorie', component: AddCategorieComponent },
-  {path: 'addMatrial', component: AddMatrialComponent },
-  {path:'liste-categorie',component:ListCategorieComponent}, 
-  {path:'update-categorie/:id',component:UpdateCategorieComponent}, 
-  {path:'liste-matrial',component:ListMatrialComponent}, 
-  {path:'update-matrial/:id',component:UpdateMatrialComponent}, 
-  {
-    path:'cart',component:CartComponent
-  }, 
-  {
-    path:'liste-produits',component:ListProductComponent
-  }
+ 
 ];
 
 @NgModule({

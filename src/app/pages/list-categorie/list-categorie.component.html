@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Velo.tn<small><br>Liste de categories</small><br>
-    <button routerLink="/add-categorie"  class="button" >Nouveau Categorie</button>
+    <button routerLink="/site/pages/addCategorie"  class="button" >Nouveau Categorie</button>
     </h2>
     <ul class="responsive-table">
       <li class="table-header">
@@ -12,7 +12,7 @@
       
       <li class="table-row">
         <div class="col col-1" data-label="Job Id">{{item.name}}</div>
-        <div class="col col-2" data-label="Amount"><i routerLink="/update-categorie/{{item._id}}" style="color: blue;cursor: pointer" class="fa fa-pencil" aria-hidden="true"></i></div>
+        <div class="col col-2" data-label="Amount"><i routerLink="/site/pages/update-categorie/{{item._id}}" style="color: blue;cursor: pointer" class="fa fa-pencil" aria-hidden="true"></i></div>
         <div class="col col-3" data-label="Amount"><i style="color: red;cursor: pointer;" (click)="delete(item._id)" class="fa fa-trash" aria-hidden="true"></i></div>
        </li>
     </ng-container>
