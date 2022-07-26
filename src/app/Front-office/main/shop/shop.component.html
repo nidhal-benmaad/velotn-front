@@ -1,0 +1,392 @@
+<body>
+    <app-header></app-header>
+    <main>
+
+        <!--
+      - BANNER
+    -->
+
+        <app-banner></app-banner>
+
+
+
+
+
+        <!--
+      - CATEGORY
+    -->
+
+
+
+
+
+
+        <!--
+      - PRODUCT
+    -->
+
+        <div class="product-container">
+
+            <div class="container">
+
+
+                <!--
+          - SIDEBAR
+        -->
+
+                <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+                    <div class="sidebar-category">
+
+                        <div class="sidebar-top">
+                            <h2 class="sidebar-title">Filltre</h2>
+
+                          
+                        </div>
+
+                        <form [formGroup]="filterForm"  style="display: block;" (ngSubmit)="onSubmit()">
+                            <div class="col-3">
+                              <div class="input-field">
+                                <label>Categorie :</label>
+                                <select required formControlName="categorie" style="margin-left: 10px">
+                                  <ng-container *ngFor="let item of categories">
+                      
+                                    <option value="{{item._id}}">{{item.name}}</option>
+                                  </ng-container>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-3">
+                              <div class="input-field"  style="display: flex;margin-top: 20px;">
+                                <label>Prix min :</label>
+                                <input type="number" formControlName="prixmin" style="margin-top: -5px;margin-left: 19px;" required>
+                              </div>
+                            </div>
+                            <div class="col-3" >
+                              <div class="input-field" style="display: flex;margin-top: 20px;">
+                                <label>Prix max :</label>
+                                <input type="number" formControlName="prixmax" style="margin-top: -5px;margin-left: 15px;" required>
+                              </div>
+                            </div>
+                      
+                            <div class="col-3">
+                              <div class="input-field" style="margin-top: 9px;">
+                                <label>Trie :</label>
+                                <select required formControlName="sort" style="margin-left: 39px;">
+                                  <ng-container *ngFor="let item of sortings">
+                      
+                                    <option value="{{item.id}}">{{item.txt}}</option>
+                                  </ng-container>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="col-3">
+                              <div class="input-field">
+                                <button type="Submit"  class="buttonS">Fillter</button>
+                      
+                            </div>
+                            </div>
+                          </form>
+
+                    </div>
+
+
+                    <div class="product-showcase">
+
+                        <h3 class="showcase-heading">Solde</h3>
+
+                        <div class="showcase-wrapper">
+
+                            <div class="showcase-container"*ngFor="let item of products">
+    
+                                <ng-container *ngIf="item.new">
+
+                                    <div class="showcase">
+
+                                        <a href="#" class="showcase-img-box">
+                                            <img [src]="'http://localhost:3000/'+item.imageUrl"
+                                                alt="relaxed short full sleeve t-shirt" width="70" class="showcase-img">
+                                        </a>
+
+                                        <div class="showcase-content">
+
+                                            <a href="#">
+                                                <h4 class="showcase-title">{{item.title}}</h4>
+                                            </a>
+
+                                            <a href="#" class="showcase-category">{{item.categorie?.name}}</a>
+                                            <ng-container *ngIf="item.promo?.rate >0">
+
+                                                <div class="price-box">
+                                                    <p class="price">{{item.promo?.price}} DT</p>
+                                                    <del>{{item.price}} DT</del>
+                                                </div>
+                                            </ng-container>
+                                            <ng-container *ngIf="item.promo?.rate ===0">
+
+                                                <div class="price-box">
+                                                    <p class="price">{{item.price}} DT</p>
+
+                                                </div>
+                                            </ng-container>
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </ng-container>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="product-box">
+
+                    <!--
+            - PRODUCT MINIMAL
+          -->
+                    <div class="product-main">
+
+                        <h2 class="title">Liste de produits</h2>
+
+                        <div class="product-grid">
+                            <ng-container *ngFor="let product of products">
+
+                                <app-product [product]="product"></app-product>
+                            </ng-container>
+                        </div>
+
+
+                    </div>
+
+                    <div class="product-minimal">
+
+                        <div class="product-showcase">
+    
+                            <h2 class="title">Nouvelles Arrivées </h2>
+    
+                            <div class="showcase-wrapper has-scrollbar">
+    
+                                <div class="showcase-container" *ngFor="let item of products">
+    
+                                    <ng-container *ngIf="item.new">
+    
+                                        <div class="showcase">
+    
+                                            <a href="#" class="showcase-img-box">
+                                                <img [src]="'http://localhost:3000/'+item.imageUrl"
+                                                    alt="relaxed short full sleeve t-shirt" width="70" class="showcase-img">
+                                            </a>
+    
+                                            <div class="showcase-content">
+    
+                                                <a href="#">
+                                                    <h4 class="showcase-title">{{item.title}}</h4>
+                                                </a>
+    
+                                                <a href="#" class="showcase-category">{{item.categorie?.name}}</a>
+                                                <ng-container *ngIf="item.promo?.rate >0">
+    
+                                                    <div class="price-box">
+                                                        <p class="price">{{item.promo.price}} DT</p>
+                                                        <del>{{item.price}} DT</del>
+                                                    </div>
+                                                </ng-container>
+                                                <ng-container *ngIf="item.promo?.rate ===0">
+    
+                                                    <div class="price-box">
+                                                        <p class="price">{{item.price}} DT</p>
+    
+                                                    </div>
+                                                </ng-container>
+    
+    
+    
+                                            </div>
+    
+                                        </div>
+    
+                                    </ng-container>
+    
+                                </div>
+    
+    
+    
+                            </div>
+    
+                        </div>
+    
+                        <div class="product-showcase">
+    
+                            <h2 class="title">Solde</h2>
+    
+                            <div class="showcase-wrapper  has-scrollbar">
+    
+                                <div class="showcase-container" *ngFor="let item of products">
+    
+                                    <ng-container *ngIf="item.promo?.rate >0">
+    
+                                        <div class="showcase">
+    
+                                            <a href="#" class="showcase-img-box">
+                                                <img [src]="'http://localhost:3000/'+item.imageUrl"
+                                                    alt="relaxed short full sleeve t-shirt" width="70" class="showcase-img">
+                                            </a>
+    
+                                            <div class="showcase-content">
+    
+                                                <a href="#">
+                                                    <h4 class="showcase-title">{{item.title}}</h4>
+                                                </a>
+    
+                                                <a href="#" class="showcase-category">{{item.categorie?.name}}</a>
+                                                <ng-container *ngIf="item.promo?.rate >0">
+    
+                                                    <div class="price-box">
+                                                        <p class="price">{{item.promo?.price}} DT</p>
+                                                        <del>{{item.price}} DT</del>
+                                                    </div>
+                                                </ng-container>
+                                                <ng-container *ngIf="item.promo?.rate ===0">
+    
+                                                    <div class="price-box">
+                                                        <p class="price">{{item.price}} DT</p>
+    
+                                                    </div>
+                                                </ng-container>
+    
+    
+    
+                                            </div>
+    
+                                        </div>
+    
+                                    </ng-container>
+    
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+    
+                    </div>
+
+
+
+                    <!--
+            - PRODUCT FEATURED
+          -->
+
+
+
+
+
+                    <!--
+            - PRODUCT GRID
+          -->
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!--
+      - TESTIMONIALS, CTA & SERVICE
+    -->
+
+        <div>
+
+            <div class="container">
+
+                <div class="testimonials-box">
+
+                    <!--
+            - TESTIMONIALS
+          -->
+
+                    <div class="testimonial">
+
+                        <h2 class="title">testimonial</h2>
+
+                        <div class="testimonial-card">
+
+                            <img src="./assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner"
+                                width="80" height="80">
+
+                            <p class="testimonial-name">Alan Doe</p>
+
+                            <p class="testimonial-title">CEO & Founder Invision</p>
+
+                            <img src="./assets/images/icons/quotes.svg" alt="quotation" class="quotation-img"
+                                width="26">
+
+                            <p class="testimonial-desc">
+                                Lorem ipsum dolor sit amet consectetur Lorem ipsum
+                                dolor dolor sit amet.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!--
+            - CTA
+          -->
+
+                    <div class="cta-container">
+
+                        <img src="./assets/images/cta-banner.jpg" alt="summer collection" class="cta-banner">
+
+                        <a href="#" class="cta-content">
+
+                            <p class="discount">25% Discount</p>
+
+                            <h2 class="cta-title">Summer collection</h2>
+
+                            <p class="cta-text">Starting @ $10</p>
+
+                            <button class="cta-btn">Shop now</button>
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!--
+            - SERVICE
+          -->
+                    <div class="service">
+
+                        <h2 class="title">Our Services</h2>
+
+                        <app-service></app-service>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </main>
+  <app-footer></app-footer>
+</body>

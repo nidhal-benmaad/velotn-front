@@ -10,7 +10,18 @@ import { UpdateCategorieComponent } from './pages/update-categorie/update-catego
 import { UpdateMatrialComponent } from './pages/update-matrial/update-matrial.component';
 
 const routes: Routes = [
- 
+  {
+    path: 'Back-office',
+    loadChildren: () =>
+      import('../app/pages/pages.routes').then(
+        (m) => m.PagesRouterModule
+      ),
+  },
+  {
+    path: 'Front-office',
+    loadChildren: () =>
+      import('../app/Front-office/front-routing.module').then((m) => m.FrontRouterModule),
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,77 @@
+<body>
+    <app-header></app-header>
+    <div class="product-featured">
+    
+        <h2 class="title">Détail du produit
+        </h2>
+    
+        <div class="showcase-wrapper has-scrollbar">
+    
+            <div class="showcase-container">
+    
+                <div class="showcase">
+    
+                    <div class="showcase-banner">
+                        <img [src]="'http://localhost:3000/'+product.imageUrl"
+                            alt="shampoo, conditioner & facewash packs" class="showcase-img">
+                    </div>
+    
+                    <div class="showcase-content">
+    
+                       
+                        <a href="#">
+                            <h3 class="showcase-title">{{product?.title}}</h3>
+                        </a>
+    
+                        <p class="showcase-desc">
+                            {{product?.description}}
+                        </p>
+    
+                        <ng-container *ngIf="product.promo?.rate >0">
+    
+                            <div class="price-box">
+                                <p class="price">{{product.promo?.price}} DT</p>
+                                <del>{{product.price}} DT</del>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngIf="product.promo?.rate ===0">
+                
+                            <div class="price-box">
+                                <p class="price">{{product.price}} DT</p>
+                
+                            </div>
+                        </ng-container>
+    
+                        <button class="add-cart-btn" (click)="addToCart(product)">Ajouter au panier
+                        </button>
+    
+                        <div class="showcase-status">
+                            <div class="wrapper">
+                                <p>
+                                  Categorie
+                                    : <b>{{product.categorie?.name}}</b>
+                                </p>
+    
+                                <p>
+                                    Disponible: <b>{{product.stock}}</b>
+                                </p>
+                            </div>
+    
+                            <div class="showcase-status-bar"></div>
+                        </div>
+    
+                  
+    
+                    </div>
+    
+                </div>
+    
+            </div>
+    
+          
+    
+        </div>
+    
+    </div>
+    <app-footer></app-footer>
+    </body>

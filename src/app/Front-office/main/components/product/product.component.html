@@ -1,0 +1,61 @@
+<div class="showcase">
+
+    <div class="showcase-banner">
+
+
+        <img [src]="'http://localhost:3000/'+product.imageUrl"
+        alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
+    <img [src]="'http://localhost:3000/'+product.imageUrl"
+        alt="Mens Winter Leathers Jackets" width="300" class="product-img hover">
+
+    <p *ngIf="product.promo?.rate >0 && !product?.new " class="showcase-badge">Solde</p>
+    <p *ngIf="product?.new" class="showcase-badge angle pink">Nouveau</p>
+
+        <div class="showcase-actions">
+
+            <button class="btn-action">
+                <i class="fa fa-heart" aria-hidden="true"></i>            </button>
+
+            <button class="btn-action" (click)="to(product._id)">
+                <i class="fa fa-eye" aria-hidden="true"></i>
+              
+            </button>
+
+          
+
+            <button class="btn-action" (click)="addToCart(product)">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="showcase-content">
+
+        <a href="#" class="showcase-category">{{product.categorie?.name}}</a>
+
+        <a href="#">
+            <h3 class="showcase-title">{{product.title}}</h3>
+        </a>
+
+
+
+        <ng-container *ngIf="product.promo?.rate >0">
+
+            <div class="price-box">
+                <p class="price">{{product.promo.price}} DT</p>
+                <del>{{product.price}} DT</del>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="product.promo?.rate ===0">
+
+            <div class="price-box">
+                <p class="price">{{product.price}} DT</p>
+
+            </div>
+        </ng-container>
+
+    </div>
+
+</div>

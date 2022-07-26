@@ -5,7 +5,7 @@ export const appRoutes: Routes = [{
     path: 'site', component: AuthComponent, children: [
       
      
-        { path: 'pages', loadChildren: () => import('../pages/pages.module').then(m => m.PagesModule) },
+        { path: 'pages', loadChildren: () => import('../../pages/pages.module').then(m => m.PagesModule) },
        
     ]
 }];

@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="CartContainer">
+    <div class="Header">
+        <h3 class="Heading">Panier</h3>
+        
+    </div>
+  
+<ng-container  *ngIf="items.length >0">
+
+    <div class="Cart-Items"  *ngFor="let item of items">
+        <div class="image-box">
+            <img [src]="'http://localhost:3000/'+item.cartItem.product.imageUrl" style=" height:59px" />
+        </div>
+        <div class="about">
+            <h1 class="title">{{item.cartItem.product.title}}</h1>
+         </div>
+        <div class="counter">
+            <div   *ngIf="item.cartItem.product.promo.price ===0">{{ item.cartItem.product.price}} DT</div>
+            <div *ngIf="item.cartItem.product.promo.price > 0"  >{{  item.cartItem.product.promo.price}} DT</div>
+         
+            <div class="count" >{{item.quantity}}</div>  
+            <div   >{{ item.cartItem.product?.categorie?.name}} </div>
+
+        </div>
+        <div class="prices">
+            <div class="amount" *ngIf="item.cartItem.product.promo.price ===0">{{item.quantity*item.cartItem.product.price}} DT</div>
+            <div *ngIf="item.cartItem.product.promo.price > 0" class="amount">{{item.quantity * item.cartItem.product.promo.price}} DT</div>
+             <div class="remove" (click)="remove(item.cartItem)"><u>Supprime</u></div>
+        </div>
+  </div>
+
+</ng-container>    
+  <hr> 
+  <div class="checkout">
+  <div class="total">
+      <div>
+          <div class="Subtotal">Total</div>
+          <div class="items">{{items.length}} produit</div>
+      </div>
+      <div class="total-amount">{{ cart.total$|async }}</div>
+  </div>
+  <button class="button">Checkout</button></div>
+</div>

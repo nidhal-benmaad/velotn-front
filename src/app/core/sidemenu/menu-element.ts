@@ -25,6 +25,14 @@ export const menus = [
         'icon': 'receipt',
         'open': false,
         'link': 'pages/liste-matrial',
+
+     
+    }, {
+        'name': 'Messaoudi Imen',
+        'icon': 'receipt',
+        'open': false,
+        'link': 'pages/liste-matrial',
+        
      
     }
 ];

@@ -22,7 +22,7 @@ import { appRoutes } from './lazyloader.routes';
 // };
 
  
-import { CoreModule } from '../core/core.module';
+import { CoreModule } from '../../core/core.module';
  
 
 @NgModule({
