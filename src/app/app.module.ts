@@ -1,54 +1,35 @@
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IndexComponent } from './users/index/index.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { AddUserComponent } from './users/add-user/add-user.component';
-import { EditUserComponent } from './users/edit-user/edit-user.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { BookingIndexComponent } from './rentals/booking-index/booking-index.component';
-import { AddBookingComponent } from './rentals/add-booking/add-booking.component';
-import { EditBookingComponent } from './rentals/edit-booking/edit-booking.component';
-import { ProfileComponent } from './profile/profile.component';
-import { NavComponent } from './nav/nav.component';
-import { HomeComponent } from './home/home.component';
-import { FileUploadComponent } from './components/file-upload/file-upload.component';
-import { ImageCropperModule } from 'ngx-image-cropper';
-import { ProfileImageComponent } from './components/profile-image/profile-image.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {RentalsService} from "./services/rentals.service";
+import {AddRentalComponent} from "./components/add-rental/add-rental.component";
+import {RentalsListComponent} from "./components/rentals-list/rentals-list.component";
+import {RentalsDetailsComponent} from "./components/rental-details/rentals-details.component";
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { AddFeedbackComponent } from './components/add-feedback/add-feedback.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
+import { FeedbackListComponent } from './components/feedback-list/feedback-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
-    NotFoundComponent,
-    AddUserComponent,
-    EditUserComponent,
-    LoginComponent,
-    RegisterComponent,
-    BookingIndexComponent,
-    AddBookingComponent,
-    EditBookingComponent,
-    ProfileComponent,
-    NavComponent,
-    HomeComponent,
-    FileUploadComponent,
-    ProfileImageComponent,
-    DashboardComponent,
+    AddRentalComponent,
+    RentalsListComponent,
+    RentalsDetailsComponent,
+    AddFeedbackComponent,
+    FeedbackListComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
-    ImageCropperModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent],
+  providers: [RentalsService],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

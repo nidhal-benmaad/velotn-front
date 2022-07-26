@@ -13,15 +13,29 @@
   </div>
   <div class="col-md-6">
     <div *ngIf="currentRental">
-      <h4>Tutorial</h4>
       <div>
         <label><strong>Address:</strong></label> {{ currentRental?.address }}
       </div>
       <div>
-        <label><strong>Price:</strong></label>
+        <label><strong>Prix:</strong></label>
         {{ currentRental?.price }}
       </div>
-
+      <div>
+        <label><strong>Couleur:</strong></label>
+        {{ currentRental?.velo?.couleur }}
+      </div>
+      <div>
+        <label><strong>Type:</strong></label>
+        {{ currentRental?.velo?.kind }}
+      </div>
+      <div>
+        <label><strong>Marque:</strong></label>
+        {{ currentRental?.velo?.marque }}
+      </div>
+      <div>
+        <label><strong>Modéle:</strong></label>
+        {{ currentRental?.velo?.modele }}
+      </div>
       <a class="badge badge-warning" routerLink="/rentals/{{ currentRental?.id }}">
         Edit
       </a>

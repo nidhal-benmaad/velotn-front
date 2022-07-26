@@ -14,7 +14,7 @@
       </div>
 
       <div class="form-group">
-        <label for="price">Price</label>
+        <label for="price">Prix</label>
         <input
           class="form-control"
           id="price"
@@ -22,6 +22,48 @@
           [(ngModel)]="rental.price"
           name="price"
         />
+
+        <div class="form-group">
+          <label for="couleur">Couleur</label>
+          <input
+            class="form-control"
+            id="couleur"
+            required
+            [(ngModel)]="rental.velo.couleur"
+            name="couleur"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="kind">Type</label>
+          <input
+            class="form-control"
+            id="kind"
+            required
+            [(ngModel)]="rental.velo.kind"
+            name="kind"
+          />
+        </div>
+        <div class="form-group">
+          <label for="marque">Marque</label>
+          <input
+            class="form-control"
+            id="marque"
+            required
+            [(ngModel)]="rental.velo.marque"
+            name="marque"
+          />
+        </div>
+        <div class="form-group">
+          <label for="modele">Modéle</label>
+          <input
+            class="form-control"
+            id="modele"
+            required
+            [(ngModel)]="rental.velo.modele"
+            name="modele"
+          />
+        </div>
       </div>
 
       <button (click)="saveRental()" class="btn btn-success">Submit</button>

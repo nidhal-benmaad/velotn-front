@@ -1,27 +1,21 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ProfileComponent } from './profile/profile.component';
-import { RegisterComponent } from './register/register.component';
-import { BookingIndexComponent } from './rentals/booking-index/booking-index.component';
-import { IndexComponent } from './users/index/index.component';
+import { Routes, RouterModule } from '@angular/router';
+import {RentalsListComponent} from "./components/rentals-list/rentals-list.component";
+import {AddRentalComponent} from "./components/add-rental/add-rental.component";
+import {RentalsDetailsComponent} from "./components/rental-details/rentals-details.component";
+import { AddFeedbackComponent } from './components/add-feedback/add-feedback.component';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'users', component: IndexComponent },
-  { path: 'rentals', component: BookingIndexComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: '**', component: NotFoundComponent },
+  { path: '', redirectTo: 'rentals', pathMatch: 'full' },
+  { path: 'rentals', component: RentalsListComponent },
+  { path: 'rentals/:id', component: RentalsDetailsComponent },
+  { path: 'add', component: AddRentalComponent },
+  { path: 'feedback', component: FeedbackComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,0 +1,15 @@
+ <div class="col-md-6">
+    <h4>Feedbacks:</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let feedback of feedbacks; let i = index"
+      >
+        {{ feedback?.nom }} {{ feedback?.prenom }}, {{feedback?.stars}} étoiles, {{feedback.createdAt | date:'dd/MM/yyyy'}}:
+        <br>
+        {{feedback?.detail}}
+        <br>
+        <a (click)="update(feedback)">Edit</a>|<a (click)="delete(feedback)">Delete</a>
+      </li>
+    </ul>
+  </div>

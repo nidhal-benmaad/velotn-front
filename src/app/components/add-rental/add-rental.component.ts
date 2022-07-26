@@ -10,7 +10,7 @@ export class AddRentalComponent implements OnInit {
   rental = {
     address: '',
     price: '',
-    velo: {couleur: String}
+    velo: {couleur: '', kind: '', modele: '', marque: ''}
   };
   submitted = false;
 
@@ -22,7 +22,8 @@ export class AddRentalComponent implements OnInit {
   saveRental(): void {
     const data = {
       address: this.rental.address,
-      price: this.rental.price
+      price: this.rental.price,
+      velo: this.rental.velo
     };
 
     this.rentalService.create(data)
@@ -41,7 +42,7 @@ export class AddRentalComponent implements OnInit {
     this.rental = {
       address: '',
       price: '',
-      velo: {couleur: String}
+      velo: {couleur: '', kind: '', modele: '', marque: ''}
     };
   }
 
